@@ -1,0 +1,27 @@
+doctype html
+html(ng-app)
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/css/style.css')
+        link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
+        link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
+    body
+        ul(class="nav nav-tabs")
+            li: a(href="/") Home
+            li: a(href="/book") Book
+            li(class="active"): a(href="/book/newbook") Add New Book
+            li: a(href="/book") Node.js
+            li: a(href="/book") Profile
+            li: a(href="/book") Help
+h1 Input Buku Baru
+form(method="POST", action="/books" class="form" role="form")
+   div(class="form-group")
+   p nama :
+         input#nama(type="text", name="name" class="form-control input-sm" placeholder='input a book name')
+   p isbn :
+         input#isbn(type="text", name="isbn" class="form-control input-sm" placeholder='input book isbn')
+   p author :
+         input#author(type="text", name="author" class="form-control input-sm" placeholder='Input author')
+   p pages :
+         input#pages(type="text", name="pages" class="form-control input-sm" placeholder='Input pages')
+   button(type="submit" class="btn btn-success") Add Book

@@ -1,0 +1,30 @@
+doctype html
+html(ng-app)
+   head
+      title= title
+      link(rel='stylesheet', href='/stylesheets/css/style.css')
+      link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
+      link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
+   body
+table(class="table table-hover")
+   caption: h1 BOOK NAME : #{books.name}
+   tr(class="warning")
+   td name
+   td :
+   td #{books.name}
+   tr
+    td isbn
+    td :
+    td #{books.isbn}
+   tr
+    td author
+    td :
+    td #{books.author}
+   tr
+    td pages
+    td :
+    td #{books.pages}
+  tr
+         td:  a(href="/book" class="btn btn-success") Back To Book List
+         td   or
+         td:  a(href="/books/#{books.isbn}/update" class="btn btn-info") Edite this Books

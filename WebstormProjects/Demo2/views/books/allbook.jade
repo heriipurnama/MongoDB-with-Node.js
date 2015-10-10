@@ -1,0 +1,34 @@
+doctype html
+html(ng-app)
+   head
+      title= title
+      link(rel='stylesheet', href='/stylesheets/css/style.css')
+      link(rel="stylesheet" href="/stylesheets/css/bootstrap.min.css")
+      link(rel="stylesheet" href="/stylesheets/css/bootstrap-theme.min.css")
+   body
+       ul(class="nav nav-tabs")
+           li: a(href="/") Home
+           li(class="active"): a(href="/book") Book
+           li: a(href="/book/newbook") Add New Book
+           li: a(href="/book") Node.js
+           li: a(href="/book") Profile
+           li: a(href="/book") Help
+
+table(class="table table-hover")
+   caption: h1 DAFTAR BUKU IT TERBARU
+   tr(class="warning")
+    th ISBN
+    th BOOK NAME
+    th AUTHOR
+    th PAGES
+    th ACTION
+
+   -each ambilDariBooks in books
+    tbody
+    tr(class="active")
+    td(align="left"): a(href="/books/#{ambilDariBooks.isbn}") #{ambilDariBooks.isbn}
+    td(align="left") #{ambilDariBooks.name}
+    td(align="left") #{ambilDariBooks.author}
+    td(align="left") #{ambilDariBooks.pages}
+    td(align="left"): a(href="/books/#{ambilDariBooks.isbn}/update") edit |
+                      a(href="/books/#{ambilDariBooks.isbn}/delete ") | delet
